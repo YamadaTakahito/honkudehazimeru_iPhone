@@ -62,3 +62,15 @@ do {
 } catch MyError.InvalidValue {
     print("error")
 }
+
+func longMethod() throws {}
+
+do {
+    defer {
+        print("done time: \(Date())")
+    }
+    print("processing time: \(Date())")
+    try longMethod()
+} catch {
+    print("error")
+}
