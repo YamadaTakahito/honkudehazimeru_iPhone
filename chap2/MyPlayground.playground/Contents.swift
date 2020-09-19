@@ -73,4 +73,51 @@ do {
     try longMethod()
 } catch {
     print("error")
-}
+}
+
+var radio = UISwitch()
+radio.setOn(false, animated: false)
+
+class Dog {
+    var name = ""
+    var type = ""
+    var birthday = ""
+    
+    func bark() {
+        print("wang wang")
+    }
+}
+
+class GuideDog: Dog {
+    override func bark() {
+        super.bark()
+        print("kyan kyan")
+    }
+}
+
+var dog = Dog()
+dog.bark()
+var guideDog = GuideDog()
+guideDog.bark()
+
+struct MyStruct {
+    var value: String?
+    
+    func method(value: Int) -> Int {
+        let resultValue = 0
+        return resultValue
+    }
+}
+
+enum Fruit {
+    case Apple
+    case Orange
+}
+
+func requestMinAndMax() -> (min: Int, max: Int) {
+    return (1, 100)
+}
+
+let minAndMax = requestMinAndMax()
+let minValue = minAndMax.min
+let maxValue = minAndMax.max
