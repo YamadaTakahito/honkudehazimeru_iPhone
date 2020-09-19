@@ -46,4 +46,19 @@ func addValue(_ value: Int) -> Int {
 }
 print(addValue(100))
 
+enum MyError: Error {
+    case InvalidValue
+}
 
+func doubleUp(_ value: Int) throws -> Int {
+    if value < 0 {
+        throw MyError.InvalidValue
+    }
+    return value * 2
+}
+
+do {
+    try doubleUp(-10)
+} catch MyError.InvalidValue {
+    print("error")
+}
